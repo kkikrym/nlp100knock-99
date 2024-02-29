@@ -1,4 +1,4 @@
-MeCab
+mecab-python3
 pandas
 plotly
 scipy
