@@ -1,6 +1,5 @@
 from torch_transformer import DEVICE
 import streamlit as st
-import pandas as pd
 import torch
 from torch_transformer.transformer import Transformer
 from torch_transformer.translator import Translator
