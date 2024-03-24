@@ -1,11 +1,12 @@
-from torch_transformer import DEVICE
+
 import streamlit as st
 import torch
+from torch_transformer import DEVICE
 from torch_transformer.transformer import Transformer
 from torch_transformer.translator import Translator
 
 # SentencePiece 英語・日本語 同一モデル 10epoch：
-state_dict = torch.load(f'torch_transformer/Transformer_dim512_3e-05_10_state_dict.pt', map_location=DEVICE)
+state_dict = torch.load(f'./torch_transformer/Transformer_dim512_3e-05_10_state_dict.pt', map_location=DEVICE)
 model = Transformer(16000, 16000, 512, 8)
 model.load_state_dict(state_dict)
 translator = Translator(model)
