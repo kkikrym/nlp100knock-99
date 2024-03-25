@@ -4,9 +4,11 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+ENV TMPDIR=/data/vincents/
+
 RUN apt-get update && \
     apt-get -y upgrade && \
-    pip install -r requirements.txt
+    pip install --cache-dir=/data/vincents/ --build /data/vincents/ -r requirements.txt
 
 EXPOSE 8501
 
